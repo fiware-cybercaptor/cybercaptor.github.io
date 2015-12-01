@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CyberCAPTOR API Open Specification</title>
+    <title>CyberSecurity API Open Specification</title>
     <link href="css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -43,13 +43,9 @@
 	        
         
 	        
-		        <li><a href="#API-content">CyberCAPTOR API Open Specification</a></li>
-	        
         
 	        
-        
-	        
-        
+		        <li><a href="#API-content">CyberSecurity API Open Specification</a></li>
 	        
         
 	        
@@ -124,11 +120,6 @@
     
     
     
-        <li class="tocline"> <a href="#concepts" title = "Concepts"> Concepts </a>
-
-    
-</li>
-    
     
    
 
@@ -139,6 +130,11 @@
     
 
     
+        <li class="tocline"> <a href="#conformance" title = "Conformance"> Conformance </a>
+
+    
+</li>
+    
 
 
  </ul>
@@ -146,6 +142,9 @@
 
 
 
+
+    
+    <li><a href="#common-payload-definition">Common Payload Definition</a></li>
 
 
 
@@ -157,7 +156,7 @@
 
                         <li>
                             
-                                <a href="#resource_group_cybercaptor-server-rest-api-without-inititialization" title = "Group CyberCAPTOR-Server REST API without inititialization">Group CyberCAPTOR-Server REST API without inititialization</a>
+                                <a href="#resource_group_cybersecurity-rest-api-without-inititialization" title = "Group CyberSecurity REST API without inititialization">Group CyberSecurity REST API without inititialization</a>
                             
                             <ul class="toc">
                               
@@ -254,7 +253,7 @@
 
                         <li>
                             
-                                <a href="#resource_group_cybercaptor-server-rest-api-after-initialization" title = "Group CyberCAPTOR-Server REST API after initialization">Group CyberCAPTOR-Server REST API after initialization</a>
+                                <a href="#resource_group_cybersecurity-rest-api-after-initialization" title = "Group CyberSecurity REST API after initialization">Group CyberSecurity REST API after initialization</a>
                             
                             <ul class="toc">
                               
@@ -389,7 +388,7 @@
 
                         <li>
                             
-                                <a href="#resource_group_cybercaptor-p2ds-rest-api" title = "Group CyberCAPTOR-P2DS REST API">Group CyberCAPTOR-P2DS REST API</a>
+                                <a href="#resource_group_cybersecurity-p2ds-rest-api" title = "Group CyberSecurity-P2DS REST API">Group CyberSecurity-P2DS REST API</a>
                             
                             <ul class="toc">
                               
@@ -542,13 +541,6 @@
     
     
     
-        <li class="tocline"> <a href="#acknowledgements" title = "Acknowledgements"> Acknowledgements </a>
-
-    
-</li>
-    
-    
-    
     
     
     
@@ -568,7 +560,9 @@
 	
 
 	
-		<h1>CyberCAPTOR API Open Specification </h1>
+
+	
+		<h1>CyberSecurity API Open Specification </h1>
 	
 
 	
@@ -579,13 +573,9 @@
 
 	
 
-	
 
-	
 
 	
-
-
 
 	
 
@@ -601,12 +591,6 @@
 
 	
 
-	
-
-	
-
-	
-
 
 
 
@@ -636,18 +620,6 @@
 	
 	
 	
-		
-	
-
-	
-	
-	
-
-	
-		
-	
-	
-	
 
 	
 	
@@ -655,32 +627,9 @@
 
 
 
-	<dl>
-	
-		<dt class="versionLabel">This version:</dt> 
-		<dd class="versionValue"> <a href="https://fiware-cybercaptor.github.io/4.4.3">
-			https://fiware-cybercaptor.github.io/4.4.3
-		</a> </dd>
-	
-
-	
-		<dt class="versionLabel">Previous version:</dt> 
-		<dd class="versionValue"> <a href="https://fiware-cybercaptor.github.io/4.4.2">
-			https://fiware-cybercaptor.github.io/4.4.2
-		</a> </dd>
-	
-
-	<dt class="versionLabel">Latest version:</dt> 
-	<dd class="versionValue"> <a href="latest">https://fiware-cybercaptor.github.io/latest</a> </dd>
-
-	</dl>
 
 
 
-
-
-  
-  
 
   
   
@@ -699,9 +648,6 @@
 
   
     
-  
-  
-
   
   
 
@@ -736,11 +682,7 @@
 
 	
 
-	
 
-
-
-	
 
 	
 
@@ -748,8 +690,8 @@
 
 	
 		<h2 id="copyright">Copyright</h2>
-		<p>This specification is licensed under the
-<a href="https://raw.githubusercontent.com/fiware-cybercaptor/cybercaptor/master/LICENSE">GNU GENERAL PUBLIC LICENSE Version 3</a>.</p>
+		<p>Copyright © 2012-2015 by <a href="http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Thales_sv">THALES</a>.</p>
+<p>Copyright © 2014-2015 by <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/ZHAW">ZHAW</a>.</p>
 	
 
 
@@ -757,81 +699,19 @@
 
 
 	<h2 id="abstract">Abstract</h2>
-	<p>This is the Open Specification of the REST API of <strong>CyberCAPTOR</strong>. It contains the API used between <em>CyberCAPTOR Server</em> and <em>CyberCAPTOR Client</em>, and the one of <em>CyberCAPTOR P2DS</em>.</p>
-<p><strong>CyberCAPTOR</strong> implements the FIWARE CyberSecurity Generic Enabler.</p>
+	<p>This is the Open Specification of the REST API of the <strong>CyberSecurity</strong> GE. It contains the API used between a <em>CyberSecurity GE Server</em> and a <em>CyberSecurity GE Client</em>, and the one of <em>CyberSecurity P2DS</em>.</p>
+<p><strong>CyberCAPTOR</strong> is the reference implementation of the FIWARE CyberSecurity Generic Enabler.</p>
 <h1>Preface</h1>
-<h4>Group (object)</h4>
-<pre><code>+ gid (number) - The group's identifier, guaranteed to be unique for this group manager.
-+ name (string) - A descriptive name of a group
-</code></pre>
-<h4>PeerInfo (object)</h4>
-<pre><code>+ gid (number) - The group to which this peer belongs.
-+ lastStatus (number) - The last known status of this peer (unknown = 0, started = 1, error = 2, stopped = 3)
-+ peerName (string) - A descriptive name for the peer.
-+ peerType (number) - The type of peer (input peer = 1, privacy peer = 2)
-+ publicKey (string) - The peer's public key.
-+ url (string) - The URL at which to contact the peer.
-</code></pre>
-<h4>DataSet (object)</h4>
-<pre><code>+ data (string) - semicolon seperated integers
-+ peerName (string) - Name of the peer to add the data set for
-</code></pre>
-<h4>DataSets (object)</h4>
-<pre><code>+ data (list) - List of semicolon seperated integers
-+ peerName (string) - Name of the peer
-</code></pre>
-<h4>GroupConfigurationInfo (object)</h4>
-<pre><code>+ field (string) - Field value for the underlying MPC protocol; a good value is 9223372036854775783 (BigInteger as String)
-+ maxElement (string) - Maximum value the underlying MPC protocol shall accept (BigINteger as String)
-+ gid (int) - ID of the group
-+ mpcProtocol (string) - MPC protocol to use.
-+ numberOfItems (int) - Number of items within a single data sets.
-+ numberOfTimeSlots (int) - Number of time slots (in other terms, how many data sets are expected). Negative values mean an infinite amount (pure streaming).
-+ resultBufferSize (number) - Size of the buffer for final results
-</code></pre>
-<h4>GroupName (object)</h4>
-<pre><code>+ name (string) - Name of the group
-</code></pre>
-<h4>Peer (object)</h4>
-<pre><code>+ gid (number) - The group to which this peer belongs.
-+ lastStatus (number) - The last known status of this peer (unknown = 0, started = 1, error = 2, stopped = 3)
-+ peerName (string) - A descriptive name for the peer (informational only).
-+ peerType (number) - The type of peer (input peer = 1, privacy peer = 2)
-+ publicKey (string) - The peer's public key.
-+ url (string) - The URL at which to contact the peer.
-+ registrationCode (string) - The registration code used to register this peer.
-+ verified (boolean) - Whether this peer has been marked as verified or not.
-</code></pre>
-<h4>Registration (object)</h4>
-<pre><code>+ gid (number) - ID of the group.
-+ registrationCode (string) - The registration code.
-</code></pre>
-<h4>PeerConfigurationInfo (object)</h4>
-<pre><code>+ name (string) - Name of the peer
-+ registrationCode (string) - Registration code
-+ publicKey (string) - public key (base64 encoded)
-+ privateKey (string) - private key (base64 encoded)
-+ groupMgmtURL (string) - URL of the group management service.
-+ peerType (int) - Type of the peer (1 = input peer, 2 = privacy peer)
-+ finalResultsURL (string) - URL to send final results to.
-</code></pre>
-<h4>PeerConfigurationInfoCollection (object)</h4>
-<pre><code>+ peers - List of PeerConfiguration (peers)
-</code></pre>
 
 
 
-
-	
 
 	
 
 	
 		<h2 id="status">Status of this document</h2>
-		<p>This is a release of the specifications of CyberCAPTOR. If you have any problem, comment or suggestion, please create an issue on the Github project: </p>
-<ul>
-<li><a href="https://github.com/fiware-cybercaptor/cybercaptor/issues">https://github.com/fiware-cybercaptor/cybercaptor/issues</a></li>
-</ul>
+		<p>This is the Release 4 of the GE Open API Specification.</p>
+<p>This specification is licensed under the <a href="http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FI-WARE_Open_Specification_Legal_Notice_(implicit_patents_license)">FIWARE Open Specification License</a>.</p>
 	
 
 	
@@ -851,7 +731,7 @@
 
         <li>
             
-                <a href="#resource_group_cybercaptor-server-rest-api-without-inititialization" title = "CyberCAPTOR-Server REST API without inititialization">CyberCAPTOR-Server REST API without inititialization</a>
+                <a href="#resource_group_cybersecurity-rest-api-without-inititialization" title = "CyberSecurity REST API without inititialization">CyberSecurity REST API without inititialization</a>
             
             <ul>
               
@@ -1022,7 +902,7 @@
 
         <li>
             
-                <a href="#resource_group_cybercaptor-server-rest-api-after-initialization" title = "CyberCAPTOR-Server REST API after initialization">CyberCAPTOR-Server REST API after initialization</a>
+                <a href="#resource_group_cybersecurity-rest-api-after-initialization" title = "CyberSecurity REST API after initialization">CyberSecurity REST API after initialization</a>
             
             <ul>
               
@@ -1285,7 +1165,7 @@
 
         <li>
             
-                <a href="#resource_group_cybercaptor-p2ds-rest-api" title = "CyberCAPTOR-P2DS REST API">CyberCAPTOR-P2DS REST API</a>
+                <a href="#resource_group_cybersecurity-p2ds-rest-api" title = "CyberSecurity-P2DS REST API">CyberSecurity-P2DS REST API</a>
             
             <ul>
               
@@ -1601,15 +1481,11 @@
 	
 		
 	
-		
-	
 
 
 
 
 
-	
-		
 	
 		
 	
@@ -1636,7 +1512,12 @@ is achieved through secure multiparty computation, or SMCP.</p>
 		
 		  	<section>
 				<h2 id="introduction"> Introduction</h2>
-
+<p>The CyberSecurity GE Open API introduces three main concepts: </p>
+<ul>
+<li>Scored Attack Paths;</li>
+<li>Remediations;</li>
+<li>Privacy-Preserving Data Sharing.</li>
+</ul>
 
 
 <h3 id="scored_attack_paths"> Scored Attack Paths</h3>
@@ -1750,9 +1631,21 @@ actively try to disrupt the protocol.</li>
 		
 	
 		
-		  	<section>
-				<h2 id="concepts"> Concepts</h2>
-<p>Please refer to the Introduction for the concepts used in this specification.</p>
+	
+
+
+
+
+
+	
+		
+	
+		
+	
+		
+			<section>
+				<h2 id="conformance"> Conformance</h2>
+<p>All the interfaces described by this specification are mandatory and must be implemented in order to be compliant with. </p>
 
 
 			</section>
@@ -1761,18 +1654,505 @@ actively try to disrupt the protocol.</li>
 
 
 
+    
+      
+      
+      
+      <section id="common-payload-definition">
+      <h2>Common Payload Definition</h2>
 
+      
+          
+              <h3>PeerInfo</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">gid</span>
+                        <span class="parameter-attributes">(optional,
+                    number)</span>
+                </dt>
+                <dd>
+                     The group to which this peer belongs.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">lastStatus</span>
+                        <span class="parameter-attributes">(optional,
+                    stopped = 3)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerName</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     A descriptive name for the peer.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerType</span>
+                        <span class="parameter-attributes">(optional,
+                    privacy peer = 2)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">publicKey</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     The peer's public key.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">url</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     The URL at which to contact the peer.
+                    
+                </dd>
+            
+        </dl>
+    
 
-	
-		
-	
-		
-	
-		
-	
+          
+      
+          
+              <h3>DataSets</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">data</span>
+                        <span class="parameter-attributes">(optional,
+                    list)</span>
+                </dt>
+                <dd>
+                     List of semicolon seperated integers
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerName</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     Name of the peer
+                    
+                </dd>
+            
+        </dl>
+    
 
+          
+      
+          
+              <h3>Group</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">gid</span>
+                        <span class="parameter-attributes">(optional,
+                    number)</span>
+                </dt>
+                <dd>
+                     The group's identifier, guaranteed to be unique for this group manager.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">name</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     A descriptive name of a group
+                    
+                </dd>
+            
+        </dl>
+    
 
+          
+      
+          
+              <h3>DataSet</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">data</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     semicolon seperated integers
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerName</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     Name of the peer to add the data set for
+                    
+                </dd>
+            
+        </dl>
+    
 
+          
+      
+          
+              <h3>GroupName</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">name</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     Name of the group
+                    
+                </dd>
+            
+        </dl>
+    
+
+          
+      
+          
+              <h3>GroupConfigurationInfo</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">field</span>
+                        <span class="parameter-attributes">(optional,
+                    string) - Field value for the underlying MPC protocol; a good value is 9223372036854775783 (BigInteger as String)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">gid</span>
+                        <span class="parameter-attributes">(optional,
+                    int)</span>
+                </dt>
+                <dd>
+                     ID of the group
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">maxElement</span>
+                        <span class="parameter-attributes">(optional,
+                    string) - Maximum value the underlying MPC protocol shall accept (BigINteger as String)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">mpcProtocol</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     MPC protocol to use.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">numberOfItems</span>
+                        <span class="parameter-attributes">(optional,
+                    int)</span>
+                </dt>
+                <dd>
+                     Number of items within a single data sets.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">numberOfTimeSlots</span>
+                        <span class="parameter-attributes">(optional,
+                    int)</span>
+                </dt>
+                <dd>
+                     Number of time slots (in other terms, how many data sets are expected). Negative values mean an infinite amount (pure streaming).
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">resultBufferSize</span>
+                        <span class="parameter-attributes">(optional,
+                    number)</span>
+                </dt>
+                <dd>
+                     Size of the buffer for final results
+                    
+                </dd>
+            
+        </dl>
+    
+
+          
+      
+          
+              <h3>Registration</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">gid</span>
+                        <span class="parameter-attributes">(optional,
+                    number)</span>
+                </dt>
+                <dd>
+                     ID of the group.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">registrationCode</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     The registration code.
+                    
+                </dd>
+            
+        </dl>
+    
+
+          
+      
+          
+              <h3>Peer</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">gid</span>
+                        <span class="parameter-attributes">(optional,
+                    number)</span>
+                </dt>
+                <dd>
+                     The group to which this peer belongs.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">lastStatus</span>
+                        <span class="parameter-attributes">(optional,
+                    stopped = 3)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerName</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     A descriptive name for the peer (informational only).
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerType</span>
+                        <span class="parameter-attributes">(optional,
+                    privacy peer = 2)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">publicKey</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     The peer's public key.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">registrationCode</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     The registration code used to register this peer.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">url</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     The URL at which to contact the peer.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">verified</span>
+                        <span class="parameter-attributes">(optional,
+                    boolean)</span>
+                </dt>
+                <dd>
+                     Whether this peer has been marked as verified or not.
+                    
+                </dd>
+            
+        </dl>
+    
+
+          
+      
+          
+              <h3>PeerConfigurationInfoCollection</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">peers</span>
+                        <span class="parameter-attributes">(optional,
+                    list) - List of PeerConfiguration (peers)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+        </dl>
+    
+
+          
+      
+          
+              <h3>PeerConfigurationInfo</h3>
+              
+    
+        <dl>
+            
+                <dt>
+                    <span class="parameter-name">finalResultsURL</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     URL to send final results to.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">groupMgmtURL</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     URL of the group management service.
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">name</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     Name of the peer
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">peerType</span>
+                        <span class="parameter-attributes">(optional,
+                    2 = privacy peer)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">privateKey</span>
+                        <span class="parameter-attributes">(optional,
+                    string) - private key (base64 encoded)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">publicKey</span>
+                        <span class="parameter-attributes">(optional,
+                    string) - public key (base64 encoded)</span>
+                </dt>
+                <dd>
+                    None
+                    
+                </dd>
+            
+                <dt>
+                    <span class="parameter-name">registrationCode</span>
+                        <span class="parameter-attributes">(optional,
+                    string)</span>
+                </dt>
+                <dd>
+                     Registration code
+                    
+                </dd>
+            
+        </dl>
+    
+
+          
+      
+      </section>
     
 
   
@@ -1784,8 +2164,8 @@ actively try to disrupt the protocol.</li>
 
 
         
-            <section id="resource_group_cybercaptor-server-rest-api-without-inititialization" class="resourceGroup">
-            <h2 id="h-resource_group_cybercaptor-server-rest-api-without-inititialization">CyberCAPTOR-Server REST API without inititialization</h2>
+            <section id="resource_group_cybersecurity-rest-api-without-inititialization" class="resourceGroup">
+            <h2 id="h-resource_group_cybersecurity-rest-api-without-inititialization">CyberSecurity REST API without inititialization</h2>
         
 	<p>This group of REST calls contains the API calls that <strong>do not need</strong> the <code>/initialize</code> call that loads the vulnerability and remediation database and generates the attack graph and the attack paths.</p>
         
@@ -1883,8 +2263,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -1894,10 +2272,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-version/version">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-version/version">View in Apiary</a>
             
-        
-    
         
     
         
@@ -1977,8 +2353,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -1988,10 +2362,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-version/versiondetailed">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-version/versiondetailed">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2100,8 +2472,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2111,10 +2481,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/get-global-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/get-global-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2211,8 +2579,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2222,10 +2588,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/set-global-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/set-global-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2305,8 +2669,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2316,10 +2678,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/get-snort-rule-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/get-snort-rule-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2416,8 +2776,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2427,10 +2785,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/set-snort-rule-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/set-snort-rule-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2510,8 +2866,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2521,10 +2875,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/get-firewall-rule-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/get-firewall-rule-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2621,8 +2973,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2632,10 +2982,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/set-firewall-rule-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/set-firewall-rule-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2715,8 +3063,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2726,10 +3072,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/get-patch-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/get-patch-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2826,8 +3170,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2837,10 +3179,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-without-inititialization/group-configuration/set-patch-remediation-cost-parameters">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-without-inititialization/group-configuration/set-patch-remediation-cost-parameters">View in Apiary</a>
             
-        
-    
         
     
         
@@ -2974,8 +3314,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -2987,8 +3325,6 @@ actively try to disrupt the protocol.</li>
             
                 <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/idmef/add-idmef-alerts/add-idmef-alerts">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3006,8 +3342,8 @@ actively try to disrupt the protocol.</li>
     </section>
 
         
-            <section id="resource_group_cybercaptor-server-rest-api-after-initialization" class="resourceGroup">
-            <h2 id="h-resource_group_cybercaptor-server-rest-api-after-initialization">CyberCAPTOR-Server REST API after initialization</h2>
+            <section id="resource_group_cybersecurity-rest-api-after-initialization" class="resourceGroup">
+            <h2 id="h-resource_group_cybersecurity-rest-api-after-initialization">CyberSecurity REST API after initialization</h2>
         
 	<p>This group contains thte API calls <strong>after</strong> the <code>/initialize</code> call that loads the vulnerability and remediation database and generates the attack graph and the attack paths.</p>
         
@@ -3105,8 +3441,6 @@ actively try to disrupt the protocol.</li>
         
     
         
-    
-        
             
                 
             
@@ -3116,10 +3450,8 @@ actively try to disrupt the protocol.</li>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/initialize/initialize-from-data-on-disk">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/initialize/initialize-from-data-on-disk">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3217,8 +3549,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3228,10 +3558,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/initialize/initialize-from-xml-topology">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/initialize/initialize-from-xml-topology">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3342,8 +3670,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3353,10 +3679,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-get-the-xml-topology/get-xml-topology">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-get-the-xml-topology/get-xml-topology">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3465,8 +3789,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3476,10 +3798,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-hosts/get-the-host-list">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-hosts/get-the-host-list">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3576,8 +3896,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3587,10 +3905,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-hosts/set-the-host-list">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-hosts/set-the-host-list">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3699,8 +4015,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3710,10 +4024,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-graphs/get-the-attack-graph">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-graphs/get-the-attack-graph">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3793,8 +4105,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3804,10 +4114,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-graphs/get-the-attack-graph-score">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-graphs/get-the-attack-graph-score">View in Apiary</a>
             
-        
-    
         
     
         
@@ -3887,8 +4195,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -3898,10 +4204,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-graphs/get-the-topological-attack-graph">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-graphs/get-the-topological-attack-graph">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4010,8 +4314,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4021,10 +4323,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/get-the-attack-paths-list">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/get-the-attack-paths-list">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4104,8 +4404,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4115,10 +4413,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/get-the-number-of-attack-paths">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/get-the-number-of-attack-paths">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4211,8 +4507,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4222,10 +4516,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/get-one-attack-path">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/get-one-attack-path">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4318,8 +4610,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4329,10 +4619,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/get-one-attack-path-in-topological-form">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/get-one-attack-path-in-topological-form">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4425,8 +4713,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4436,10 +4722,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/get-the-remediations-to-an-attack-path">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/get-the-remediations-to-an-attack-path">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4540,8 +4824,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4551,10 +4833,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/simulate-the-remediation-to-an-attack-path">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/simulate-the-remediation-to-an-attack-path">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4655,8 +4935,6 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
         
     
         
-    
-        
             
                 
             
@@ -4666,10 +4944,8 @@ See <a href="https://github.com/fiware-cybercaptor/cybercaptor-data-extraction/b
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/validate-the-remediation-to-an-attack-path">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/validate-the-remediation-to-an-attack-path">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4750,8 +5026,6 @@ and their potential dynamic remediations that could prevent the described attack
         
     
         
-    
-        
             
                 
             
@@ -4761,10 +5035,8 @@ and their potential dynamic remediations that could prevent the described attack
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-server-rest-api-after-initialization/group-attack-paths/get-idmef-alerts">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-rest-api-after-initialization/group-attack-paths/get-idmef-alerts">View in Apiary</a>
             
-        
-    
         
     
         
@@ -4782,8 +5054,8 @@ and their potential dynamic remediations that could prevent the described attack
     </section>
 
         
-            <section id="resource_group_cybercaptor-p2ds-rest-api" class="resourceGroup">
-            <h2 id="h-resource_group_cybercaptor-p2ds-rest-api">CyberCAPTOR-P2DS REST API</h2>
+            <section id="resource_group_cybersecurity-p2ds-rest-api" class="resourceGroup">
+            <h2 id="h-resource_group_cybersecurity-p2ds-rest-api">CyberSecurity-P2DS REST API</h2>
         
 	
         
@@ -4928,8 +5200,6 @@ and their potential dynamic remediations that could prevent the described attack
         
     
         
-    
-        
             
                 
             
@@ -4939,10 +5209,8 @@ and their potential dynamic remediations that could prevent the described attack
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/add-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/add-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5077,8 +5345,6 @@ and their potential dynamic remediations that could prevent the described attack
         
     
         
-    
-        
             
                 
             
@@ -5088,10 +5354,8 @@ and their potential dynamic remediations that could prevent the described attack
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/delete-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/delete-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5201,8 +5465,6 @@ and their potential dynamic remediations that could prevent the described attack
         
     
         
-    
-        
             
                 
             
@@ -5212,10 +5474,8 @@ and their potential dynamic remediations that could prevent the described attack
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/list-peers">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/list-peers">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5343,8 +5603,6 @@ an input peer.</p>
         
     
         
-    
-        
             
                 
             
@@ -5354,10 +5612,8 @@ an input peer.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/add-input-data-set">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/add-input-data-set">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5484,8 +5740,6 @@ an input peer.</p>
         
     
         
-    
-        
             
                 
             
@@ -5495,10 +5749,8 @@ an input peer.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/add-input-data-sets">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/add-input-data-sets">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5650,8 +5902,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -5661,10 +5911,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/receive-message">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/receive-message">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5799,8 +6047,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -5810,10 +6056,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/start-a-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/start-a-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -5931,8 +6175,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -5942,10 +6184,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/peer-service/stop-a-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/peer-service/stop-a-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -6117,8 +6357,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -6128,10 +6366,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/verify-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/verify-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -6283,8 +6519,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -6294,10 +6528,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/upload-publickey">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/upload-publickey">View in Apiary</a>
             
-        
-    
         
     
         
@@ -6432,8 +6664,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -6443,10 +6673,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/get-configuration">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/get-configuration">View in Apiary</a>
             
-        
-    
         
     
         
@@ -6581,8 +6809,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -6592,10 +6818,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/get-group-information">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/get-group-information">View in Apiary</a>
             
-        
-    
         
     
         
@@ -6713,8 +6937,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -6724,10 +6946,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/get-group">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/get-group">View in Apiary</a>
             
-        
-    
         
     
         
@@ -6854,8 +7074,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -6865,10 +7083,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/create-group">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/create-group">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7002,8 +7218,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7013,10 +7227,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/register-a-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/register-a-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7151,8 +7363,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7162,10 +7372,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/generate-registration-code">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/generate-registration-code">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7300,8 +7508,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7311,10 +7517,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/delete-group">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/delete-group">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7449,8 +7653,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7460,10 +7662,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/delete-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/delete-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7607,8 +7807,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7618,10 +7816,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/set-configuration">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/set-configuration">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7764,8 +7960,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7775,10 +7969,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/update-peer-status">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/update-peer-status">View in Apiary</a>
             
-        
-    
         
     
         
@@ -7913,8 +8105,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -7924,10 +8114,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/get-peer">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/get-peer">View in Apiary</a>
             
-        
-    
         
     
         
@@ -8045,8 +8233,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -8056,10 +8242,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/start-peers">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/start-peers">View in Apiary</a>
             
-        
-    
         
     
         
@@ -8177,8 +8361,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -8188,10 +8370,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/stop-peers">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/stop-peers">View in Apiary</a>
             
-        
-    
         
     
         
@@ -8309,8 +8489,6 @@ and verify their integrity.</p>
         
     
         
-    
-        
             
                 
             
@@ -8320,10 +8498,8 @@ and verify their integrity.</p>
                 
             
             
-                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybercaptor-p2ds-rest-api/group-management-service/delete-registration">View in Apiary</a>
+                <a target="_blank" href="http://docs.cybercaptor.apiary.io/#reference/cybersecurity-p2ds-rest-api/group-management-service/delete-registration">View in Apiary</a>
             
-        
-    
         
     
         
@@ -8344,8 +8520,8 @@ and verify their integrity.</p>
     <div class= "header" ><h2>Examples</h2> </div>
     
         
-            <section id="resource_group_cybercaptor-server-rest-api-without-inititialization_example" class="resourceGroupExample">
-                <div class= "header" ><h3 id="h-resource_group_cybercaptor-server-rest-api-without-inititialization_example">CyberCAPTOR-Server REST API without inititialization</h3> </div>
+            <section id="resource_group_cybersecurity-rest-api-without-inititialization_example" class="resourceGroupExample">
+                <div class= "header" ><h3 id="h-resource_group_cybersecurity-rest-api-without-inititialization_example">CyberSecurity REST API without inititialization</h3> </div>
         
 
                 
@@ -9585,8 +9761,8 @@ and verify their integrity.</p>
         </section>
     
         
-            <section id="resource_group_cybercaptor-server-rest-api-after-initialization_example" class="resourceGroupExample">
-                <div class= "header" ><h3 id="h-resource_group_cybercaptor-server-rest-api-after-initialization_example">CyberCAPTOR-Server REST API after initialization</h3> </div>
+            <section id="resource_group_cybersecurity-rest-api-after-initialization_example" class="resourceGroupExample">
+                <div class= "header" ><h3 id="h-resource_group_cybersecurity-rest-api-after-initialization_example">CyberSecurity REST API after initialization</h3> </div>
         
 
                 
@@ -11317,8 +11493,8 @@ Content-Length: 2174</code></pre>
         </section>
     
         
-            <section id="resource_group_cybercaptor-p2ds-rest-api_example" class="resourceGroupExample">
-                <div class= "header" ><h3 id="h-resource_group_cybercaptor-p2ds-rest-api_example">CyberCAPTOR-P2DS REST API</h3> </div>
+            <section id="resource_group_cybersecurity-p2ds-rest-api_example" class="resourceGroupExample">
+                <div class= "header" ><h3 id="h-resource_group_cybersecurity-p2ds-rest-api_example">CyberSecurity-P2DS REST API</h3> </div>
         
 
                 
@@ -15105,15 +15281,6 @@ Content-Length: 2174</code></pre>
 	
 
 	
-	  	<section>
-			<h1 id="acknowledgements"> Acknowledgements</h1>
-
-
-
-		</section>
-	
-
-	
 
 	
 
@@ -15124,9 +15291,11 @@ Content-Length: 2174</code></pre>
       <h1>References</h1>
           <ul>
               
-                  <li><a href="https://github.com/fiware-cybercaptor/cybercaptor/issues">https://github.com/fiware-cybercaptor/cybercaptor/issues</a></li>
+                  <li><a href="http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FI-WARE_Open_Specification_Legal_Notice_(implicit_patents_license)">FIWARE Open Specification License</a></li>
               
-                  <li><a href="https://raw.githubusercontent.com/fiware-cybercaptor/cybercaptor/master/LICENSE">GNU GENERAL PUBLIC LICENSE Version 3</a></li>
+                  <li><a href="http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Thales_sv">THALES</a></li>
+              
+                  <li><a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/ZHAW">ZHAW</a></li>
               
                   <li><a href="http://www.sepia.ee.ethz.ch/">SEPIA</a></li>
               
